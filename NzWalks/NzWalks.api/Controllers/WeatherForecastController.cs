@@ -19,7 +19,7 @@ namespace NzWalks.api.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<WeatherForecast> Get() // this is how 
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
