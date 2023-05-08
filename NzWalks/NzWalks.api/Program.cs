@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NzWalks.api.Data;
+using NzWalks.api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,13 @@ builder.Services.AddDbContext<NzWalksDbContext>(options =>
     //this is the key from the appsettings.json
     options.UseSqlServer(builder.Configuration.GetConnectionString("NzWalks"));
 });
+
+//help / note - when ask for the IRegionsRepository, give the SqlRegionRepository
+//now we can add the sqlregionrepository in the controller
+builder.Services.AddScoped<IRegionsRepository, SqlRegionRepository>();
+
+//when the app start, automapper will look a the files folders(aka assembly) and look for all profiles to use the maps to map data
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 var app = builder.Build();
 
