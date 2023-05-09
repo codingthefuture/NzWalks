@@ -24,6 +24,8 @@ builder.Services.AddDbContext<NzWalksDbContext>(options =>
 //now we can add the sqlregionrepository in the controller
 builder.Services.AddScoped<IRegionsRepository, SqlRegionRepository>();
 
+builder.Services.AddScoped<IWalkRepository, WalkRepository>(); //tell asp.net to give me the WalkRepository instead
+
 //when the app start, automapper will look a the files folders(aka assembly) and look for all profiles to use the maps to map data
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 

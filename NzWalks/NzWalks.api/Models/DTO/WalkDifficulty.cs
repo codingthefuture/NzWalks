@@ -1,4 +1,4 @@
-﻿namespace NzWalks.api.Models.Domain
+﻿namespace NzWalks.api.Models.DTO
 {
     public class WalkDifficulty
     {
