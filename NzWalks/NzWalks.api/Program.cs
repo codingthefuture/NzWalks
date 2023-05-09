@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 //adding dependency injection for the db context
 //the type this takes is NzWalksDbContext
 //help, notes
@@ -23,7 +24,7 @@ builder.Services.AddDbContext<NzWalksDbContext>(options =>
 //help / note - when ask for the IRegionsRepository, give the SqlRegionRepository
 //now we can add the sqlregionrepository in the controller
 builder.Services.AddScoped<IRegionsRepository, SqlRegionRepository>();
-
+builder.Services.AddScoped<IWalkDifficultyRepository, WalkDifficultyRepository>();
 builder.Services.AddScoped<IWalkRepository, WalkRepository>(); //tell asp.net to give me the WalkRepository instead
 
 //when the app start, automapper will look a the files folders(aka assembly) and look for all profiles to use the maps to map data

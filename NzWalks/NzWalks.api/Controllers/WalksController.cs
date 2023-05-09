@@ -139,6 +139,11 @@ namespace NzWalks.api.Controllers
 
             return Ok(walkDTO);
 
+        }
+
     }
 
 }
+
+
+    //note - best to create a request and response object for our api as it makes it clean

@@ -1,8 +1,7 @@
 ﻿namespace NzWalks.api.Models.DTO
 {
-    public class WalkDifficulty
+    public class UpdateWalkDifficultyRequest
     {
-        public Guid Id { get; set; }
         public string Code { get; set; }
     }
 }
